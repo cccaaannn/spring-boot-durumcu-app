@@ -62,7 +62,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result).isNotNull();
 		Assertions.assertThat(result.isSuccess()).isEqualTo(true);
 
-		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
+		List<Ingredient> ingredients = ingredientRepository.findAll();
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(1);
 		Assertions.assertThat(ingredients.get(0).getId()).isEqualTo(1);
@@ -141,7 +141,7 @@ class DurumSiparisleri {
 	@Test
 	@Order(5)
 	void deleteIngredient() {
-		Result result = ingredientService.delete(5L);
+		Result result = ingredientService.delete(4L);
 		Assertions.assertThat(result).isNotNull();
 		Assertions.assertThat(result.isSuccess()).isEqualTo(true);
 
