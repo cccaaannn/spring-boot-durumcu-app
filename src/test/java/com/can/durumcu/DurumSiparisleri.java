@@ -62,7 +62,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result).isNotNull();
 		Assertions.assertThat(result.isSuccess()).isEqualTo(true);
 
-		List<Ingredient> ingredients = ingredientRepository.findAll();
+		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(1);
 		Assertions.assertThat(ingredients.get(0).getId()).isEqualTo(1);
@@ -88,7 +88,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result3).isNotNull();
 		Assertions.assertThat(result3.isSuccess()).isEqualTo(true);
 
-		List<Ingredient> ingredients = ingredientRepository.findAll();
+		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
 
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(4);
@@ -105,7 +105,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result).isNotNull();
 		Assertions.assertThat(result.isSuccess()).isEqualTo(false);
 
-		List<Ingredient> ingredients = ingredientRepository.findAll();
+		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
 
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(4);
@@ -132,7 +132,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result2).isNotNull();
 		Assertions.assertThat(result2.isSuccess()).isEqualTo(true);
 
-		List<Ingredient> ingredients = ingredientRepository.findAll();
+		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(5);
 		Assertions.assertThat(ingredients.get(4).getName()).isEqualTo("marul");
@@ -145,7 +145,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result).isNotNull();
 		Assertions.assertThat(result.isSuccess()).isEqualTo(true);
 
-		List<Ingredient> ingredients = ingredientRepository.findAll();
+		List<Ingredient> ingredients = ingredientRepository.findAllOrdered();
 		Assertions.assertThat(ingredients).isNotNull();
 		Assertions.assertThat(ingredients.size()).isEqualTo(4);
 	}
@@ -181,7 +181,7 @@ class DurumSiparisleri {
 		Assertions.assertThat(result2.isSuccess()).isEqualTo(true);
 
 
-		List<Durum> durums = durumRepository.findAll();
+		List<Durum> durums = durumRepository.findAllOrdered();
 		Assertions.assertThat(durums).isNotNull();
 		Assertions.assertThat(durums.size()).isEqualTo(2);
 		Assertions.assertThat(durums.get(0).getName()).isEqualTo("tavuk sis durum");
