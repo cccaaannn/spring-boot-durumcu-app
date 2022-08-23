@@ -13,8 +13,10 @@ import com.can.durumcu.service.abstracts.IDurumService;
 import com.can.durumcu.service.abstracts.IFoodOrderService;
 import com.can.durumcu.service.abstracts.IIngredientService;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,6 +24,7 @@ import java.util.List;
 
 
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DurumSiparisleri {
 
 	private final IIngredientService ingredientService;
@@ -125,7 +128,7 @@ class DurumSiparisleri {
 		Ingredient merulFromDb = merulResultFromDb.getData();
 		merulFromDb.setName("marul");
 
-		Result result2 = ingredientService.update(merul);
+		Result result2 = ingredientService.update(merulFromDb);
 		Assertions.assertThat(result2).isNotNull();
 		Assertions.assertThat(result2.isSuccess()).isEqualTo(true);
 
